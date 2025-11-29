@@ -114,8 +114,15 @@ export function calculateInsurance(input: InsuranceInput): InsuranceResult {
     industrialAccidentInsurance.employerContribution +
     longTermCareInsurance.employerContribution;
 
+  // 연금보험료 공제용: 국민연금 + 건강보험 + 고용보험 본인 부담금만 (장기요양보험 제외)
+  const pensionInsuranceDeduction = 
+    nationalPension.employeeContribution +
+    healthInsurance.employeeContribution +
+    employmentInsurance.employeeContribution;
+  
   // 소득세 계산 (간이세액 방식, 월간 기준)
-  const monthlyIncomeTax = calculateIncomeTax(monthlySalary, totalInsuranceDeduction);
+  // 연금보험료 공제는 국민연금, 건강보험, 고용보험만 적용
+  const monthlyIncomeTax = calculateIncomeTax(monthlySalary, pensionInsuranceDeduction);
   const monthlyLocalIncomeTax = calculateLocalIncomeTax(monthlyIncomeTax);
 
   const tax: TaxResult = {

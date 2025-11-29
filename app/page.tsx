@@ -120,6 +120,60 @@ export default function Home() {
               </span>
             </div>
           </Link>
+
+          {/* 대출 중도상환 계산기 */}
+          <Link
+            href="/calculators/early-repayment"
+            className="block bg-white p-8 rounded-2xl shadow-lg border border-slate-200 hover:shadow-xl transition-all hover:border-red-300 group"
+          >
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-2xl font-bold text-slate-900 group-hover:text-red-600 transition-colors">
+                대출 중도상환 계산기
+              </h2>
+              <span className="text-red-500 text-2xl">→</span>
+            </div>
+            <p className="text-slate-600 mb-4">
+              대출 중도상환 시 이자 절감액을 계산하세요. 원리금균등상환, 원금균등상환 모두 지원합니다
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-red-50 text-red-700 rounded-full text-sm font-medium">
+                이자 절감
+              </span>
+              <span className="px-3 py-1 bg-red-50 text-red-700 rounded-full text-sm font-medium">
+                중도상환
+              </span>
+              <span className="px-3 py-1 bg-red-50 text-red-700 rounded-full text-sm font-medium">
+                대출 계산
+              </span>
+            </div>
+          </Link>
+
+          {/* 부동산 구매 비용 계산기 */}
+          <Link
+            href="/calculators/real-estate"
+            className="block bg-white p-8 rounded-2xl shadow-lg border border-slate-200 hover:shadow-xl transition-all hover:border-amber-300 group"
+          >
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-2xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors">
+                부동산 구매 비용 계산기
+              </h2>
+              <span className="text-amber-500 text-2xl">→</span>
+            </div>
+            <p className="text-slate-600 mb-4">
+              부동산 구매 시 발생하는 총 비용을 계산하세요. 취득세, 등록세, 양도소득세를 한눈에 확인합니다
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-amber-50 text-amber-700 rounded-full text-sm font-medium">
+                취득세 계산
+              </span>
+              <span className="px-3 py-1 bg-amber-50 text-amber-700 rounded-full text-sm font-medium">
+                첫 주택 혜택
+              </span>
+              <span className="px-3 py-1 bg-amber-50 text-amber-700 rounded-full text-sm font-medium">
+                2025년 규제
+              </span>
+            </div>
+          </Link>
         </div>
 
         {/* 추가 안내 */}

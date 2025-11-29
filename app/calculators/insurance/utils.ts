@@ -96,7 +96,7 @@ export function getLongTermCareInsuranceRate(): number {
 
 /**
  * 소득세 계산 (간이세액 방식, 2025년 기준)
- * 네이버 계산기와 유사한 간이세액 계산 방식 사용
+ * 네이버 계산기와 동일한 간이세액 계산 방식 사용
  * @param monthlySalary 월 급여
  * @param insuranceDeduction 4대보험 + 장기요양보험 본인 부담금 (월간)
  * @param nonTaxableAmount 비과세액 (월간, 기본값 20만원)
@@ -110,16 +110,13 @@ export function calculateIncomeTax(
   // 연봉 계산
   const annualSalary = monthlySalary * 12;
   
-  // 연간 4대보험 + 장기요양보험 본인 부담금
-  const annualInsuranceDeduction = insuranceDeduction * 12;
-  
   // 연간 비과세액
   const annualNonTaxableAmount = nonTaxableAmount * 12;
   
   // 근로소득금액 = 연봉 - 연간 비과세액
   const earnedIncome = annualSalary - annualNonTaxableAmount;
   
-  // 근로소득공제 계산
+  // 근로소득공제 계산 (2025년 기준)
   let earnedIncomeDeduction = 0;
   if (earnedIncome <= 5000000) {
     earnedIncomeDeduction = earnedIncome * 0.7;
@@ -136,14 +133,21 @@ export function calculateIncomeTax(
   // 종합소득금액 = 근로소득금액 - 근로소득공제
   const comprehensiveIncome = Math.max(0, earnedIncome - earnedIncomeDeduction);
   
-  // 기본공제: 연 1,056만원 (월 88만원)
+  // 연금보험료 공제: 국민연금, 건강보험, 고용보험 본인 부담금 (연간)
+  // 장기요양보험료는 연금보험료 공제 대상이 아님
+  const annualInsuranceDeduction = insuranceDeduction * 12;
+  
+  // 연금보험료 공제 적용 (종합소득금액에서 차감)
+  const incomeAfterInsuranceDeduction = Math.max(0, comprehensiveIncome - annualInsuranceDeduction);
+  
+  // 기본공제: 연 1,056만원 (월 88만원, 부양가족 1명 기준)
   const basicDeduction = 10560000;
   
-  // 소득공제: 종합소득금액의 20% (최대 200만원)
-  const incomeDeduction = Math.min(comprehensiveIncome * 0.2, 2000000);
+  // 소득공제: 연금보험료 공제 후 금액의 20% (최대 200만원)
+  const incomeDeduction = Math.min(incomeAfterInsuranceDeduction * 0.2, 2000000);
   
-  // 과세표준 = 종합소득금액 - 기본공제 - 소득공제
-  const taxableIncome = Math.max(0, comprehensiveIncome - basicDeduction - incomeDeduction);
+  // 과세표준 = 연금보험료 공제 후 금액 - 기본공제 - 소득공제
+  const taxableIncome = Math.max(0, incomeAfterInsuranceDeduction - basicDeduction - incomeDeduction);
   
   if (taxableIncome <= 0) {
     return 0;
@@ -175,7 +179,7 @@ export function calculateIncomeTax(
     annualTax = 12000000 * 0.06 + 34000000 * 0.15 + 42000000 * 0.24 + 62000000 * 0.35 + 150000000 * 0.38 + 200000000 * 0.40 + (taxableIncome - 500000000) * 0.42;
   }
   
-  // 월간 소득세로 변환
+  // 월간 소득세로 변환 (반올림)
   return Math.round(annualTax / 12);
 }
 
