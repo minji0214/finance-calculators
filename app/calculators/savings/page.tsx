@@ -24,6 +24,7 @@ export default function SavingsPage() {
       <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-10 pb-20">
         <div className="max-w-5xl mx-auto px-5">
           {/* 네비게이션 */}
+          
           <div className="mb-6">
             <Link
               href="/"
