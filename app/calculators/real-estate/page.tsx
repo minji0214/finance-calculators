@@ -48,6 +48,14 @@ export default function RealEstatePage() {
             </div>
           </div>
 
+          {/* 안내 문구 */}
+          <div className="mb-8 bg-amber-50 border border-amber-200 rounded-lg p-4">
+            <p className="text-sm text-amber-800 text-center">
+              ⚠️ 이 계산기는 참고용으로만 사용하세요. 실제 세금과 수수료는 지역별, 상품별로 다를 수 있으며, 
+              정책 변경에 따라 달라질 수 있습니다. 부동산 구매 전에는 세무사나 부동산 전문가와 상담하시기 바랍니다.
+            </p>
+          </div>
+
           {/* 계산기 */}
           <RealEstateForm />
 

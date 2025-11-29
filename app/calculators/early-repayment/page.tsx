@@ -49,6 +49,14 @@ export default function EarlyRepaymentPage() {
             </p>
           </div>
 
+          {/* 안내 문구 */}
+          <div className="mb-8 bg-amber-50 border border-amber-200 rounded-lg p-4">
+            <p className="text-sm text-amber-800 text-center">
+              ⚠️ 이 계산기는 참고용으로만 사용하세요. 실제 중도상환 수수료, 이자율 변동 등에 따라 결과가 달라질 수 있습니다. 
+              중도상환 전에는 해당 금융기관에 정확한 금액을 확인하시기 바랍니다.
+            </p>
+          </div>
+
           {/* 계산기 */}
           <EarlyRepaymentForm />
 

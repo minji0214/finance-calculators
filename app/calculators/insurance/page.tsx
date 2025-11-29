@@ -48,6 +48,14 @@ export default function InsurancePage() {
             </div>
           </div>
 
+          {/* 안내 문구 */}
+          <div className="mb-8 bg-amber-50 border border-amber-200 rounded-lg p-4">
+            <p className="text-sm text-amber-800 text-center">
+              ⚠️ 이 계산기는 참고용으로만 사용하세요. 실제 보험료는 소득 상한선, 추가 공제 항목 등에 따라 달라질 수 있습니다. 
+              정확한 실수령액은 급여명세서나 해당 기관에 문의하시기 바랍니다.
+            </p>
+          </div>
+
           {/* 계산기 */}
           <InsuranceForm />
 

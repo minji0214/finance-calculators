@@ -14,11 +14,16 @@ export const reverseGoalMeta: Metadata = {
     '초기 예치금 계산',
     '목표 금액 달성',
   ],
+  alternates: {
+    canonical: 'https://finance-calculators-mj.vercel.app/calculators/reverse-goal',
+  },
   openGraph: {
     title: '목표 금액 역산 계산기 | 매월 저축액 자동 계산',
     description:
       '목표 금액을 달성하기 위해 필요한 매월 저축액, 기간, 초기 예치금을 역산 계산합니다.',
     type: 'website',
+    url: 'https://finance-calculators-mj.vercel.app/calculators/reverse-goal',
+    siteName: '금융 계산기',
   },
   twitter: {
     card: 'summary_large_image',
@@ -32,7 +37,7 @@ export const reverseGoalSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: '목표 금액 역산 계산기',
-  url: 'https://yourdomain.com/calculators/reverse-goal',
+  url: 'https://finance-calculators-mj.vercel.app/calculators/reverse-goal',
   description: '목표 금액을 달성하기 위해 필요한 조건을 역산 계산해주는 계산기',
   applicationCategory: 'FinanceApplication',
   offers: {

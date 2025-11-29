@@ -15,11 +15,16 @@ export const realEstateMeta: Metadata = {
     '부동산 구매 총 비용',
     '중개수수료 계산',
   ],
+  alternates: {
+    canonical: 'https://finance-calculators-mj.vercel.app/calculators/real-estate',
+  },
   openGraph: {
     title: '부동산 구매 비용 계산기 | 취득세 등록세 자동 계산',
     description:
       '부동산 구매 시 발생하는 총 비용을 계산하세요. 취득세, 등록세, 중개수수료, 양도소득세를 한눈에 확인.',
     type: 'website',
+    url: 'https://finance-calculators-mj.vercel.app/calculators/real-estate',
+    siteName: '금융 계산기',
   },
   twitter: {
     card: 'summary_large_image',
@@ -33,7 +38,7 @@ export const realEstateSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: '부동산 구매 비용 계산기',
-  url: 'https://yourdomain.com/calculators/real-estate',
+  url: 'https://finance-calculators-mj.vercel.app/calculators/real-estate',
   description: '부동산 구매 시 발생하는 총 비용을 계산해주는 계산기',
   applicationCategory: 'FinanceApplication',
   offers: {

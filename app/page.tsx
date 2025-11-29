@@ -1,8 +1,16 @@
 import Link from 'next/link';
+import { organizationSchema } from './organization-schema';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-20 pb-20">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema),
+        }}
+      />
+      <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-20 pb-20">
       <div className="max-w-4xl mx-auto px-5">
         {/* 헤더 */}
         <div className="text-center mb-16">
@@ -184,5 +192,6 @@ export default function Home() {
         </div>
       </div>
     </main>
+    </>
   );
 }

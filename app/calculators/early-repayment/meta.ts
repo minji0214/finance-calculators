@@ -14,11 +14,16 @@ export const earlyRepaymentMeta: Metadata = {
     '중도상환 이자 절감',
     '주택담보대출 중도상환',
   ],
+  alternates: {
+    canonical: 'https://finance-calculators-mj.vercel.app/calculators/early-repayment',
+  },
   openGraph: {
     title: '대출 중도상환 계산기 | 이자 절감액 자동 계산',
     description:
       '대출 중도상환 시 이자 절감액을 계산하세요. 원리금균등상환, 원금균등상환 모두 지원.',
     type: 'website',
+    url: 'https://finance-calculators-mj.vercel.app/calculators/early-repayment',
+    siteName: '금융 계산기',
   },
   twitter: {
     card: 'summary_large_image',
@@ -32,7 +37,7 @@ export const earlyRepaymentSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: '대출 중도상환 계산기',
-  url: 'https://yourdomain.com/calculators/early-repayment',
+  url: 'https://finance-calculators-mj.vercel.app/calculators/early-repayment',
   description: '대출 중도상환 시 이자 절감액을 계산해주는 계산기',
   applicationCategory: 'FinanceApplication',
   offers: {

@@ -14,11 +14,16 @@ export const savingsMeta: Metadata = {
     '복리 계산',
     '이자소득세',
   ],
+  alternates: {
+    canonical: 'https://finance-calculators-mj.vercel.app/calculators/savings',
+  },
   openGraph: {
     title: '예·적금 이자 계산기 | 세후 이자 자동 계산',
     description:
       '예금·적금 이자 쉽게 계산하세요. 세후 이자, 만기수령액 자동 계산. 은행보다 빠른 예·적금 계산기.',
     type: 'website',
+    url: 'https://finance-calculators-mj.vercel.app/calculators/savings',
+    siteName: '금융 계산기',
   },
   twitter: {
     card: 'summary_large_image',
@@ -32,7 +37,7 @@ export const savingsSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: '예·적금 이자 계산기',
-  url: 'https://yourdomain.com/calculators/savings',
+  url: 'https://finance-calculators-mj.vercel.app/calculators/savings',
   description: '예금과 적금의 세후 이자를 자동으로 계산해주는 계산기',
   applicationCategory: 'FinanceApplication',
   offers: {

@@ -16,11 +16,16 @@ export const insuranceMeta: Metadata = {
     '산재보험 계산',
     '2025년 국민연금 개정안',
   ],
+  alternates: {
+    canonical: 'https://finance-calculators-mj.vercel.app/calculators/insurance',
+  },
   openGraph: {
     title: '4대보험 계산기 | 연봉 실수령액 자동 계산',
     description:
       '연봉을 입력하면 4대보험료와 실수령액을 자동으로 계산합니다. 국민연금, 건강보험, 고용보험, 산재보험 공제액을 한눈에 확인하세요.',
     type: 'website',
+    url: 'https://finance-calculators-mj.vercel.app/calculators/insurance',
+    siteName: '금융 계산기',
   },
   twitter: {
     card: 'summary_large_image',
@@ -34,7 +39,7 @@ export const insuranceSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: '4대보험 계산기',
-  url: 'https://yourdomain.com/calculators/insurance',
+  url: 'https://finance-calculators-mj.vercel.app/calculators/insurance',
   description: '4대보험료와 실수령액을 자동으로 계산해주는 계산기',
   applicationCategory: 'FinanceApplication',
   offers: {
