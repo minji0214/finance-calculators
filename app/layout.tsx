@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     title: '금융 계산기 | 복리, 예적금, 4대보험, 부동산 계산기',
     description: '금융 초보자도 쉽게 사용할 수 있는 다양한 금융 계산기',
   },
+  other: {
+    'naver-site-verification': 'afc114533edeac6ff061e4c7a6119879e97dfb43',
+  },
 }
 
 export default function RootLayout({

@@ -61,3 +61,4 @@ export interface EarlyRepaymentResult {
   totalSavings: number; // 총 절감액 (이자 절감액)
 }
 
+

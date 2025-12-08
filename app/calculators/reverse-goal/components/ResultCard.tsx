@@ -192,3 +192,4 @@ export default function ResultCard({ result, calculationType }: ResultCardProps)
   );
 }
 
+

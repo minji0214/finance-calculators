@@ -27,3 +27,4 @@ export interface CompoundInterestResult {
   schedule: ScheduleItem[];
 }
 
+

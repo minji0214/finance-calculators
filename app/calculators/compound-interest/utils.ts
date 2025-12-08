@@ -44,3 +44,4 @@ export function parseKoreanInput(input: string): number {
   const num = input.replace(/[^0-9]/g, '');
   return num ? parseInt(num, 10) : 0;
 }
+

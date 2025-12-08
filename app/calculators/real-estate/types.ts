@@ -91,3 +91,4 @@ export interface RealEstateResult {
   totalPayment: number; // 총 지출 (계약금 + 세금 + 수수료)
 }
 
+

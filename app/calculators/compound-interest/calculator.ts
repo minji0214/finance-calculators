@@ -61,3 +61,4 @@ export function calculateCompoundInterest(
     schedule,
   };
 }
+
